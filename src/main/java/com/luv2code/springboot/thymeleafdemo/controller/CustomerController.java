@@ -65,17 +65,17 @@ public class CustomerController {
 		return "customer/customer-form";			
 	}
 	
-	@GetMapping("/customerDtl")
-	public String customerDetials() {
-		return "customer/getCustomer";			
-	}
-	@PostMapping("/customerDtl")
-	public String showcustomerDetials(@RequestParam("customerId") int theId, Model theModel) {
-		Optional<Customer> customer= customerService.find(theId);
-		System.out.println(customer.get().getFirstName());
-		theModel.addAttribute("customer", customer.get());
-		return "customer/showCustomer";			
-	}
+//	@GetMapping("/customerDtl")
+//	public String customerDetials() {
+//		return "customer/getCustomer";			
+//	}
+//	@PostMapping("/customerDtl")
+//	public String showcustomerDetials(@RequestParam("customerId") int theId, Model theModel) {
+//		Optional<Customer> customer= customerService.find(theId);
+//		System.out.println(customer.get().getFirstName());
+//		theModel.addAttribute("customer", customer.get());
+//		return "customer/showCustomer";			
+//	}
 	
 	@PostMapping("/save")
 	public String saveCustomer(@ModelAttribute("customer") Customer theCustomer) {
